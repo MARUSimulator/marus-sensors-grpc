@@ -39,7 +39,7 @@ namespace Marus.Communications.Rf
             if (IsReceiver)
             {
                 _loraDevice.OnReceiveEvent += OnMsgReceive;
-                _receiveClient = gRPCConnection.Instance.GetClient<LoraTransmissionClient>();
+                _receiveClient = RosConnection.Instance.GetClient<LoraTransmissionClient>();
             }
             if (IsTransmiter)
             {

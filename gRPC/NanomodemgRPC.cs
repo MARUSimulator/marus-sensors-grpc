@@ -49,11 +49,11 @@ namespace Marus.Communications.Acoustics
             if (string.IsNullOrEmpty(requestAddress))
                 requestAddress = $"nanomodem{nanomodem.DeviceId}/nanomodem_request";
 
-            var client = gRPCConnection.Instance.GetClient<AcousticTransmissionClient>();
+            var client = RosConnection.Instance.GetClient<AcousticTransmissionClient>();
             // Server to Unity stream
             streamer.StartStream(client.StreamAcousticRequests(
                 new CommandRequest { Address = requestAddress},
-                cancellationToken: gRPCConnection.Instance.CancellationToken));
+                cancellationToken: RosConnection.Instance.CancellationToken));
 
         }
 
@@ -334,7 +334,7 @@ namespace Marus.Communications.Acoustics
         {
             client.ReturnAcousticPayload(
                 payload,
-                cancellationToken: gRPCConnection.Instance.CancellationToken);
+                cancellationToken: RosConnection.Instance.CancellationToken);
         }
 
         private NanomodemPayload GetEmptyNanomodemPayload()
