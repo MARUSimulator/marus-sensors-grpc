@@ -1,0 +1,12 @@
+{
+  "name": "com.labust.marus2.sensors-grpc",
+  "version": "1.0.0",
+  "displayName": "MARUS2 Sensors gRPC",
+  "description": "gRPC support for sensor modules in MARUS2.",
+  "unity": "6000.3",
+  "unityRelease": "23f1",
+  "dependencies": {
+    "com.labust.marus2.core": "1.0.0",
+    "com.labust.marus2.sensors": "1.0.0"
+  }
+}
