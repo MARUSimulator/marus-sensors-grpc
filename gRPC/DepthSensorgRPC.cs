@@ -27,7 +27,6 @@ namespace Marus.Sensors.gRPC
     [RequireComponent(typeof(DepthSensor))]
     public class DepthSensorgRPC : SensorStreamer<SensorStreamingClient, DepthStreamingRequest>
     {
-        double depth;
         public double covariance;
         DepthSensor sensor;
 
@@ -60,7 +59,7 @@ namespace Marus.Sensors.gRPC
                             {
                                 X = 0,
                                 Y = 0,
-                                Z = depth
+                                Z = sensor.depth
                             },
                             Orientation = new Quaternion() { }
                         }

@@ -17,6 +17,7 @@ using Sensorstreaming;
 using UnityEngine;
 using System;
 using static Sensorstreaming.SensorStreaming;
+using Marus.Core;
 
 namespace Marus.Sensors.AIS
 {

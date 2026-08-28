@@ -22,7 +22,6 @@ using static Sensorstreaming.SensorStreaming;
 
 namespace Marus.Sensors
 {
-
     /// <summary>
     /// Lidar that cast N rays evenly distributed in configured field of view.
     /// Implemented using IJobParallelFor on CPU
@@ -41,10 +40,10 @@ namespace Marus.Sensors
             base.Start();
         }
 
-
-        private PointCloud GeneratePointCloud(NativeArray<Vector3> pointcloud)
+        // Explicitly use Sensor.PointCloud
+        private Sensor.PointCloud GeneratePointCloud(NativeArray<Vector3> pointcloud)
         {
-            PointCloud _pointCloud = new PointCloud();
+            Sensor.PointCloud _pointCloud = new Sensor.PointCloud();
             foreach (Vector3 point in pointcloud)
             {
                 var tmp = TfExtensions.Unity2Map(point);
@@ -68,7 +67,8 @@ namespace Marus.Sensors
 
         protected override PointCloudStreamingRequest ComposeMessage()
         {
-            PointCloud _pointCloud = GeneratePointCloud(sensor.Points);
+            // Explicitly use Sensor.PointCloud
+            Sensor.PointCloud _pointCloud = GeneratePointCloud(sensor.Points);
             return  new PointCloudStreamingRequest()
             {
                 Data = _pointCloud,

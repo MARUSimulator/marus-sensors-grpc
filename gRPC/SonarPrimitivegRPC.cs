@@ -16,6 +16,7 @@ using System;
 using Sensorstreaming;
 using UnityEngine;
 using static Sensorstreaming.SensorStreaming;
+using Marus.Core;
 
 namespace Marus.Sensors.Primitive
 {

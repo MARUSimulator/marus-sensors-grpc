@@ -1,3 +1,0 @@
-[submodule "marus-sensors"]
-	path = marus-sensors
-	url = git@github.com:MARUSimulator/marus-sensors.git
